@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div>
+
+  <div class="p-2 border-bottom">
+    <span>Профиль tut.by</span>
+    <span class="float-right">
+      <a class="px-3" href="#">Регистрация</a>
+      <a class="px-3" href="#">Восстановление пароля</a>
+      <a class="px-3" href="#">Войти</a>
+    </span>
+  </div>
+
+  <div class="container offset-1 col-5 p-0 py-5 ">
+
+    <div class="py-3 border-bottom">
+      <div class="col-3 p-0 font-weight-bold ">
+        <h3>Регистрация</h3>
+      </div>
+      <div class="offset-3 col-9 p-0 mt-5 font-weight-bold ">
+        C помощью
+      </div>
+      <div class="align-items-center d-flex">
+        <div class="col-3 p-0">
+          Социальной сети
+        </div>
+        <div class="col-9 p-0 font-weight-bold display-4 ">
+          <a href="#">F</a>
+          <a href="#">B</a>
+          <a href="#">G</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-3 pb-5 border-bottom">
+      <div class="offset-3 col-9 p-0 pt-3 font-weight-bold">
+        Или заполнить вручную
+      </div>
+      <div class="offset-3 col-9 p-0 pt-3 font-weight-bold btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-light active">
+          <input type="radio" checked> Создать электронную почту
+        </label>
+        <label class="btn btn-light">
+          <input type="radio"> Уже есть электронная почта
+        </label>
+      </div>
+      <div class="d-flex mt-3">
+        <div class="col-3 p-0">
+          Эл. почта
+        </div>
+        <div class="p-0 input-group" style="width:37.5%">
+          <input type="text" class="form-control border-right-0 shadow-none" style="border-color: #ced4da">
+          <div class="input-group-append border-left-0">
+            <span class="input-group-text bg-white text-secondary">@tut.by</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="col-3 p-0">
+          Пароль
+        </div>
+        <div class="p-0 input-group" style="width:37.5%">
+          <input type="password" class="form-control border-right-0 shadow-none" style="border-color: #ced4da">
+          <div class="input-group-append border-left-0">
+            <span class="input-group-text bg-white text-secondary">*</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-4 border-bottom">
+      <div class="d-flex">
+        <div class="col-3 p-0">
+          Имя и фамилия
+        </div>
+        <div class="col-9 p-0">
+          <input class="form-control" type="text" placeholder="Имя Фамилия">
+        </div>
+      </div>
+      <div class="d-flex mt-4">
+        <div class="col-3 p-0">
+          Дата рождения
+        </div>
+        <div class="col-4 p-0">
+          <input class="form-control" type="date">
+        </div>
+      </div>
+    </div>
+
+    <div class="py-4">
+      <div class="d-flex">
+        <div class="col-3 p-0">
+          Телефон
+        </div>
+        <div class="col-9 p-0 input-group">
+          <div class="input-group-prepend border-left-0">
+            <button class="btn border dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">BY
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">EN</a>
+              <a class="dropdown-item" href="#">RU</a>
+            </div>
+          </div>
+          <div class="input-group-prepend input-group-text bg-white pr-0 rounded-0">
+            +375
+          </div>
+          <input class="form-control border-left-0 h-auto shadow-none" type="text" placeholder="XX XXXXXXX"
+                 style="border-color: #ced4da;">
+        </div>
+      </div>
+      <div class="offset-3 text-secondary">
+        <small>в формате +375 ХХ ХХХХХХХ</small>
+      </div>
+      <div class="offset-3 mt-5">
+        <input type="checkbox">
+        <label><small>Хочу получать рассылку новостей от TUT.BY</small></label>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
