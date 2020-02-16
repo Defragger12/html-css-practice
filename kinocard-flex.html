@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+      let cardCount = 10;
+
+      function retrieveRandomText(callback) {
+          let request = new XMLHttpRequest();
+          request.onreadystatechange = function() {
+              if (request.readyState === XMLHttpRequest.DONE) {
+                  if (request.status === 200) {
+                      callback(JSON.parse(request.responseText).text_out);
+                  } else {
+                      callback("<h4>Title<h4>");
+                  }
+              }
+          };
+          request.open('GET', 'https://www.randomtext.me/api/lorem/h4/1-2');
+          request.setRequestHeader("Accept", 'application/json');
+          request.send();
+      }
+
+      window.addEventListener('load', function() {
+          let cardToClone = document.querySelector('div#poster > div:first-child');
+          let poster = document.getElementById('poster');
+
+          for (let i = 1; i < cardCount - 1; i++) {
+              poster.appendChild(cardToClone.cloneNode(true))
+          }
+
+          [].forEach.call(document.getElementsByClassName("card-title"), function(element) {
+              retrieveRandomText((text) => {
+                  element.innerHTML = text;
+              })
+          })
+      });
+  </script>
+</head>
+
+<body>
+<div id="poster" class="d-flex flex-wrap">
+
+  <div class="card m-2 text-center">
+    <a href="#">
+      <img src="https://picsum.photos/200/250" class="card-img-top" alt="#">
+    </a>
+    <div class="card-body">
+      <label class="card-title text-truncate" style="width: 200px"></label>
+      <div>
+        <a class="btn btn-md btn-outline-primary d-block form-group" href="#">Купить билет</a>
+        <a class="btn btn-md btn-outline-primary d-block" href="#">Подарить билет</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
