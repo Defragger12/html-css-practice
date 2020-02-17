@@ -17,11 +17,11 @@
           crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-      let cardCount = 10;
+      let cardCount = 14;
 
       function retrieveRandomText(callback) {
           let request = new XMLHttpRequest();
-          request.onreadystatechange = function() {
+          request.onreadystatechange = function () {
               if (request.readyState === XMLHttpRequest.DONE) {
                   if (request.status === 200) {
                       callback(JSON.parse(request.responseText).text_out);
@@ -35,15 +35,15 @@
           request.send();
       }
 
-      window.addEventListener('load', function() {
+      window.addEventListener('load', function () {
           let cardToClone = document.querySelector('div#poster > div:first-child');
           let poster = document.getElementById('poster');
 
-          for (let i = 1; i < cardCount - 1; i++) {
+          for (let i = 1; i < cardCount; i++) {
               poster.appendChild(cardToClone.cloneNode(true))
           }
 
-          [].forEach.call(document.getElementsByClassName("card-title"), function(element) {
+          [].forEach.call(document.querySelectorAll("h4"), function (element) {
               retrieveRandomText((text) => {
                   element.innerHTML = text;
               })
@@ -53,18 +53,14 @@
 </head>
 
 <body>
-<div id="poster" class="d-flex flex-wrap">
+<div id="poster" class="d-flex flex-wrap justify-content-center">
 
-  <div class="card m-2 text-center">
-    <a href="#">
-      <img src="https://picsum.photos/200/250" class="card-img-top" alt="#">
-    </a>
-    <div class="card-body">
-      <label class="card-title text-truncate" style="width: 200px"></label>
-      <div>
-        <a class="btn btn-md btn-outline-primary d-block form-group" href="#">Купить билет</a>
-        <a class="btn btn-md btn-outline-primary d-block" href="#">Подарить билет</a>
-      </div>
+  <div class="card m-2 text-center" style="width: 15rem">
+    <img src="https://picsum.photos/200/250" class="card-img-top" alt="#">
+    <h4 class="mt-3"></h4>
+    <div class="card-body row align-items-end">
+      <a class="btn btn-md btn-outline-primary col-8 offset-2" href="#">Купить билет</a>
+      <a class="btn btn-md btn-outline-primary col-8 offset-2 mt-3" href="#">Подарить билет</a>
     </div>
   </div>
 
